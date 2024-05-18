@@ -1,28 +1,43 @@
 package org.serratec.backend.individual.exception;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 public class ErroResposta {
-    private int codigo;
-    private String mensagem;
-
-    public ErroResposta(int codigo, String mensagem) {
-        this.codigo = codigo;
-        this.mensagem = mensagem;
-    }
-
-	public int getCodigo() {
-		return codigo;
+	private Integer status;
+    private String titulo;
+    private LocalDateTime horario;
+    private List<String> erros;
+	public Integer getStatus() {
+		return status;
 	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
-
-	public String getMensagem() {
-		return mensagem;
+	public String getTitulo() {
+		return titulo;
 	}
-
-	public void setMensagem(String mensagem) {
-		this.mensagem = mensagem;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public LocalDateTime getHorario() {
+		return horario;
+	}
+	public void setHorario(LocalDateTime horario) {
+		this.horario = horario;
+	}
+	public ErroResposta(Integer status, String titulo, LocalDateTime horario, List<String> erros) {
+		super();
+		this.status = status;
+		this.titulo = titulo;
+		this.horario = horario;
+		this.erros = erros;
+	}
+	public List<String> getErros() {
+		return erros;
+	}
+	public void setErros(List<String> erros) {
+		this.erros = erros;
 	}
 
     
